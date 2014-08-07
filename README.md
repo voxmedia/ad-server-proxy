@@ -1,4 +1,4 @@
-A small ad-server proxy that speeds up local development ad server requests and permits local targeting overrides and insertions. It supports emulates our ad serving partner [OpenX](http://openx.com/). 
+A small ad-server proxy that speeds up local development ad server requests and permits local targeting overrides and insertions. It proxies interactions with our ad serving partner [OpenX](http://openx.com/).
 
 
 ## Getting started
