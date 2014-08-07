@@ -4,7 +4,8 @@ require_relative '../lib/fake_redis.rb'
 require_relative '../lib/mock_openx.rb'
 
 VCR.configure do |c|
-  c.cassette_library_dir = File.join(File.dirname(__FILE__),'cassettes')
+  # This is not working! ARGH
+  c.cassette_library_dir = File.expand_path(File.join(File.dirname(__FILE__),'cassettes'))
 end
 
 # Test our entries API
@@ -21,7 +22,6 @@ class OpenXProxyTest < Test::Unit::TestCase
   # Test that we can retrieve a specific thing
   def test_request_responds_to_data
     VCR.use_cassette('openx-proxy/sample_testing') do
-      puts "Record Mode: #{VCR.current_cassette.inspect}"
       @ad_server.request(SAMPLE_OPENX_URL,'http://polygon.com')
 
       assert_equal 200, @ad_server.response_code
