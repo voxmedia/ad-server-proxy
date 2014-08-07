@@ -1,7 +1,7 @@
 A Small OpenX proxy that speeds up local development ad server requests and permits local targeting overrides and insertions.
 
 
-## Drawbacks
+## Limitations of local ad development without this proxy
 
 * The ad server has to have the correct targeting, and knowledge of all the ad units. 
 * There is also a 5-60 minute delay for any changes to this.
