@@ -1,0 +1,22 @@
+# In development mode you can enable this and it will insert or override
+# what ad code openx responds with.
+# Read more about how it works at: ...
+#
+enabled: true
+
+ad_units: [
+  # {
+  #   url_pattern: /polygon/,
+  #   unit_id: 304992,
+  #   group_id: 0,
+  #   width: 300,
+  #   height: 250,
+  #   html: '<div width="300px" height="250px"><img src="http://i.imgur.com/OsM2GBy.png"/></div>'
+  # },
+
+  {
+    url_pattern: /voxmedia.com/,
+    unit_id: 11223344
+    html: '<div width="300px" height="250px"><img src="http://i.imgur.com/OsM2GBy.png"/></div>'
+  }
+]
