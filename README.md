@@ -96,6 +96,10 @@ ad_units: [
 
 This is an active project and we encourage contributions. [Please review our guidelines and code of conduct before contributing.](https://github.com/voxmedia/open-source-contribution-guidelines)
 
+### Testing
+
+There are a few limited unit tests in `/test/`. These can be run by executing `bundle exec ruby ./test/ad_server_proxy_test.rb`.
+
 ## License
 
 Copyright (c) 2014, Vox Media, Inc.
