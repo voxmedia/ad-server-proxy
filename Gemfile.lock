@@ -21,8 +21,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  erubis
-  rack
-  redis
-  rest-client
-  sinatra
+  erubis (~> 2.7.0)
+  rack (~> 1.5.2)
+  redis (~> 3.1.0)
+  rest-client (~> 1.7.2)
+  sinatra (~> 1.4.5)

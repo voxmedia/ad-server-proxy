@@ -1,16 +1,25 @@
-A Small OpenX proxy that speeds up local development ad server requests and permits local targeting overrides and insertions.
+A Small _OpenX_ (DFP coming shortly) proxy that speeds up local development ad server requests and permits local targeting overrides and insertions.
+
+
+
+# Up and Running
+
+1. Download or clone this repository
+2. Install the required gems via `bundle install`
+3. Create your own `ad-unit-overrides.yml` and customize it. (To start, I would suggest copying or renaming `ad-unit-overrides.yml.example`)
+4. Start the server `bundle exec rackup`. This starts on Sinatra's default port: 9292. _(use `-p <port number>` to start it on a different port)_
 
 
 ## Limitations of local ad development without this proxy
 
-* The ad server has to have the correct targeting, and knowledge of all the ad units. 
-* There is also a 5-60 minute delay for any changes to this.
-* Each request requires a round trip to get ad info from the server.
+* The ad server has to have the correct targeting, and knowledge of all the ad units.
+* There is also a 5-60 minute delay for any changes.
+* Each request requires a round trip to get the ad data from the server.
 
 
 # Development Proxy Server
 
-To overcome these limitations there is a small proxy server that does the following:
+To overcome these limitations here is a small proxy server that does the following:
 
 1. Cache OpenX responses
 2. Override ad units configured in a yaml file.
