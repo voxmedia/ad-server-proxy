@@ -1,5 +1,4 @@
-A Small _OpenX_ (DFP coming shortly) proxy that speeds up local development ad server requests and permits local targeting overrides and insertions.
-
+A small ad-server proxy that speeds up local development ad server requests and permits local targeting overrides and insertions. It supports emulates our ad serving partern OpenX. 
 
 
 ## Getting started
