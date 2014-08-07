@@ -9,6 +9,14 @@ A Small _OpenX_ (DFP coming shortly) proxy that speeds up local development ad s
 3. Create your own `ad-unit-overrides.yml` and customize it. (To start, I would suggest copying or renaming `ad-unit-overrides.yml.example`)
 4. Start the server `bundle exec rackup`. This starts on Sinatra's default port: 9292. _(use `-p <port number>` to start it on a different port)_
 
+# Using it
+
+This server responds to a single end point: `/mock&url=`. Where the URL being passed in should be what is normally called by your openx configuration. Here at Vox Media it looks something like this:
+
+```
+http://<your.ad.server.domain.com>/w/1.0/acj?o=1133877895&callback=OX_1373833895&ju=http%3A//this.is.fake.com%3A3000/&jr=&tid=16&pgid=13822&auid=561878%2C564363%2C463317%2C304996&c.browser_width=xlarge&res=1920x1200x24&plg=swf%2Csl%2Cqt%2Cshk%2Cpm&ch=UTF-8&tz=300&ws=1287x526&vmt=1&sd=1
+```
+
 
 ## Limitations of local ad development without this proxy
 
