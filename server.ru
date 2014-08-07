@@ -3,10 +3,10 @@
 require 'sinatra'
 
 # Load the openx mock library
-require File.join(File.dirname(__FILE__),'lib','mock_openx.rb')
+require_relative 'lib/mock_openx'
 
 # Load the openx mock library
-require File.join(File.dirname(__FILE__),'lib','fake_redis.rb')
+require_relative 'lib/fake_redis'
 
 # YOLO, don't care
 set :protection, :except => [:json_csrf]
