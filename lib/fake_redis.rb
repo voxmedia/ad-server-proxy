@@ -1,5 +1,5 @@
 # Quick class to emulate redis when running in test mode
-# Or if running without redis
+# Or if running without redis... horrible and inefficient 
 class FakeRedis
 
   TTL = 5 #minutes;
