@@ -1,0 +1,51 @@
+# In development mode you can enable this and it will insert or override
+# what ad code openx responds with.
+# Read more about how it works at: ...
+#
+enabled: true
+
+ad_units: [
+  # {
+  #   url_pattern: /polygon/,
+  #   unit_id: 304992,
+  #   group_id: 0,
+  #   width: 300,
+  #   height: 250,
+  #   html: '<div width="300px" height="250px"><img src="http://i.imgur.com/OsM2GBy.png"/></div>'
+  # },
+
+  {
+    url_pattern: /polygon/,
+    unit_id: 623001,
+    group_id: 0,
+    width: 1,
+    height: 1,
+    html: '<script src="http://hymnal.voxmedia.com/ads/365/design_script" type="text/javascript"></script>'
+  },
+  # {
+  #   url_pattern: /verge/,
+  #   unit_id: 96674,
+  #   group_id: 0,
+  #   width: 300,
+  #   height: 250,
+  #   html: '<div width="300px" height="250px"><img src="http://i.imgur.com/OsM2GBy.png"/></div>'
+  # },
+
+  {
+    url_pattern: /vox/,
+    unit_id: 623011,
+    group_id: 0,
+    width: 1,
+    height: 1,
+    html: '<script src="http://hymnal.voxmedia.com/ads/365/design_script" type="text/javascript"></script>'
+  },
+
+  {
+    url_pattern: /verge/,
+    unit_id: 563927,
+    group_id: 0,
+    width: 300,
+    height: 250,
+    html: '<div width="300px" height="250px"><img src="http://i.imgur.com/OsM2GBy.png"/></div>'
+  }
+]
