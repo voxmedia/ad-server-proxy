@@ -17,7 +17,7 @@ This server responds to a single end point: `http://localhost:9292/mock&url=`. W
 http://<your.ad.server.domain.com>/w/1.0/acj?o=1133877895&callback=OX_1373833895&ju=http%3A//this.is.fake.com%3A3000/&jr=&tid=16&pgid=13822&auid=561878%2C564363%2C463317%2C304996&c.browser_width=xlarge&res=1920x1200x24&plg=swf%2Csl%2Cqt%2Cshk%2Cpm&ch=UTF-8&tz=300&ws=1287x526&vmt=1&sd=1
 ```
 
-In [Chorus](http://product.voxmedia.com/2012/5/6/5426772/all-together-now-introducing-the-vox-product-blog-and-chorus) we set an environment variable to use this proxy server. So when we are running we use a slightly modified OpenX javascript file that has the following fetch function:
+In [Chorus](http://product.voxmedia.com/2012/5/6/5426772/all-together-now-introducing-the-vox-product-blog-and-chorus) we set an environment variable to use this proxy server. So when we are running we use a slightly modified OpenX javascript file that has the following fetch function (directing the request the local server).
 
 ```javascript
 // Get the URL to the ads
