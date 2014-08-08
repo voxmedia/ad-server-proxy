@@ -8,15 +8,24 @@ A small ad-server proxy that speeds up local development ad server requests and 
 3. Create your own `ad-unit-overrides.yml` and customize it. (To start, I would suggest copying or renaming `ad-unit-overrides.yml.example`)
 4. Start the server `bundle exec rackup`. This starts on Sinatra's default port: 9292. _(use `-p <port number>` to start it on a different port)_
 
-# Using it
+# Proxying Things
 
-This server responds to a single end point: `http://localhost:9292/mock&url=`. Where the URL being passed in should be what is normally called by your openx configuration. Here at Vox Media it looks something like this:
+This server responds to two end points:
 
+## 1. Javascript library proxy and rewriting
+
+**http://localhost:9292/jstag**
+
+_example_
+
+```javascript
+<script src="http://localhost:9292/jstag&url=http%3A%2F%2Fox-d.sbnation.com%2Fw%2F1.0%2Fjstag" type="text/javascript"></script>
 ```
-http://<your.ad.server.domain.com>/w/1.0/acj?o=1133877895&callback=OX_1373833895&ju=http%3A//this.is.fake.com%3A3000/&jr=&tid=16&pgid=13822&auid=561878%2C564363%2C463317%2C304996&c.browser_width=xlarge&res=1920x1200x24&plg=swf%2Csl%2Cqt%2Cshk%2Cpm&ch=UTF-8&tz=300&ws=1287x526&vmt=1&sd=1
-```
 
-In [Chorus](http://product.voxmedia.com/2012/5/6/5426772/all-together-now-introducing-the-vox-product-blog-and-chorus) we set an environment variable to use this proxy server. So when we are running we use a slightly modified OpenX javascript file that has the following fetch function (directing the request the local server).
+This first ad server request (something like: _http://ox-d.sbnation.com/w/1.0/jstag_), returns OpenX's main javascript library. We proxy this and rewrite the `fetchAds` function so that all future ad requests will be routed through the proxy.
+
+
+The change results in something like this:
 
 ```javascript
 // Get the URL to the ads
@@ -31,6 +40,19 @@ u.fetchAds = function() {
   E.write(i)
 };
 ```
+
+## 2. Ad Unit Request proxy
+
+**http://localhost:9292/mock**
+
+_example_
+
+```javascript
+<script src="http://localhost:9292/mock&url=http://your_ad_server.domain.com/w/1.0/acj?o=1133877895&callback=OX_1373833895&ju=http%3A//this.is.fake.com%3A3000/&jr=&tid=16&pgid=13822&auid=561878%2C564363%2C463317%2C304996&c.browser_width=xlarge&res=1920x1200x24&plg=swf%2Csl%2Cqt%2Cshk%2Cpm&ch=UTF-8&tz=300&ws=1287x526&vmt=1&sd=1" type="text/javascript"></script>
+```
+
+Where the URL being passed in should be what is normally called by your openx configuration. Here at Vox Media it looks something like this:
+
 
 # Documentation
 
@@ -85,11 +107,11 @@ ad_units: [
 
 ## Authors
 
-* Niv Shah (@nivshah)
-* Casey Kolderup (@ckolderup)
-* Clif Reeder (@clifff)
-* Skip Baney (@twelvelabs)
-* Brian Anderson (@banderson623)
+* Niv Shah – [@nivshah](http://github.com/nivshah)
+* Casey Kolderup – [@ckolderup](http://github.com/ckolderup)
+* Clif Reeder – [@clifff](http://github.com/clifff)
+* Skip Baney – [@twelvelabs](http://github.com/twelvelabs)
+* Brian Anderson – [@banderson623](http://github.com/banderson623)
 
 ## Contributing
 
