@@ -45,4 +45,4 @@ get '/jstag' do
   end
 end
 
-# run Sinatra::Application
+run Sinatra::Application
