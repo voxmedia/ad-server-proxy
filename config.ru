@@ -4,6 +4,8 @@ require 'sinatra'
 
 # Load the openx mock library
 require_relative 'lib/mock_openx'
+require_relative 'lib/mock_openx_js_tag.rb'
+
 
 # Load the openx mock library
 require_relative 'lib/fake_redis'
@@ -13,6 +15,7 @@ set :protection, :except => [:json_csrf]
 
 configure do
   AD_SERVER = MockOpenX.new
+  JS_TAG = MockOpenXJsTag.new
 end
 
 get '/mock' do
@@ -27,4 +30,19 @@ get '/mock' do
   end
 end
 
-run Sinatra::Application
+# This is to grab the jstag (the base openx library)
+# It monkey patches it, and all fetchAds() urls will
+# be redirected here
+get '/jstag' do
+  jstag_url = request.params['url']
+  if jstag_url
+    JS_TAG.request(jstag_url)
+    status  JS_TAG.response_code
+    headers JS_TAG.headers
+    body    JS_TAG.content
+  else
+    [500,"Can't connect"]
+  end
+end
+
+# run Sinatra::Application

@@ -2,6 +2,7 @@ require 'test/unit'
 require 'vcr'
 require_relative '../lib/fake_redis.rb'
 require_relative '../lib/mock_openx.rb'
+require_relative '../lib/mock_openx_js_tag.rb'
 
 VCR.configure do |c|
   # This is not working! ARGH

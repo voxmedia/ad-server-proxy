@@ -36,6 +36,14 @@ class MockOpenX
     @config_path = path
   end
 
+  def request_jstag(url)
+    @url
+
+    @response_code = response.fetch('code',500)
+    @response_headers = response.fetch('headers',{})
+    @content = response.fetch('body','OH NO SOMETHING BAD HAPPENED')
+  end
+
   def request(openx_url, referrer)
     @referrer = referrer
     @openx_url = openx_url
@@ -79,7 +87,7 @@ class MockOpenX
 
   # URL of the page that this is being requested for.
   def chorus_url
-   /ju=(.*)&jr/.match(@openx_url)[1]
+   /ju=(.*)&/.match(@openx_url)[1]
   end
 
   # Strip out the random stuff generated each time,
@@ -98,7 +106,11 @@ class MockOpenX
       # Cache this for 5 minutes
       @redis.setex(key_for_request, CACHE_MINUTES_TO_LIVE*60, response.to_json)
     else
-      response = JSON.parse(@redis.get(key_for_request).to_s)
+      begin
+        response = JSON.parse(@redis.get(key_for_request).to_s)
+      rescue JSON::ParserError
+        puts "\n\nREDIS PARSE ERROR: #{key_for_request}, #{@redis.get(key_for_request).to_s}\n\n"
+      end
     end
 
     @response_code = response.fetch('code',500)
