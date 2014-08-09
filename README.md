@@ -30,8 +30,7 @@ The updated function behaves like this. _(this is simplified to highlight the si
 
 ```javascript
 fetchAds = function() {
-  var url
-  url = 'http://localhost:9292/mock?url=' + encodeURIComponent(createAdRequestURL());
+  var url = 'http://localhost:9292/mock?url=' + encodeURIComponent(createAdRequestURL());
   E.template(E.Templates.SCRIPT, {
     src: url
   });
