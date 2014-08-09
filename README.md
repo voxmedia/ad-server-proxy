@@ -24,21 +24,18 @@ _example_
 
 If you are using OpenX's javascript library to get [Multi ad unit integration](http://docs.openx.com/ad_server/#adtagguide_synchjs_struct_multi.html), the initial request to `http://d.example.com/w/1.0/jstag` should be routed through proxy, which will automatically route the request for ads through the proxy.
 
-This will fetch OpenX's main javascript library. This proxy rewrite the `fetchAds` function and caches the result that all future ad requests will be routed through the proxy.
+This will fetch OpenX's main javascript library. It updates the `fetchAds` function and caches the result, now all future ad requests will be routed through the proxy.
 
-The change results in something like this:
+The updated function behaves like this. _(this is simplified to highlight the single change the proxy makes)._
 
 ```javascript
-// Get the URL to the ads
-u.fetchAds = function() {
-  var url, i;
-  z(h.ON_AD_REQUEST, [u]);
-  url = 'http://localhost:9292/mock?url=' + encodeURIComponent(u.createAdRequestURL());
-  i = E.template(E.Templates.SCRIPT, {
-    src: url,
-    id: b
+fetchAds = function() {
+  var url
+  url = 'http://localhost:9292/mock?url=' + encodeURIComponent(createAdRequestURL());
+  E.template(E.Templates.SCRIPT, {
+    src: url
   });
-  E.write(i)
+  E.write()
 };
 ```
 
