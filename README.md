@@ -19,11 +19,12 @@ This server responds to two end points:
 _example_
 
 ```javascript
-<script src="http://localhost:9292/jstag&url=http%3A%2F%2Fox-d.sbnation.com%2Fw%2F1.0%2Fjstag" type="text/javascript"></script>
+<script src="http://localhost:9292/jstag&url=http%3A%2F%2Fox-d.example.com%2Fw%2F1.0%2Fjstag" type="text/javascript"></script>
 ```
 
-This first ad server request (something like: _http://ox-d.sbnation.com/w/1.0/jstag_), returns OpenX's main javascript library. We proxy this and rewrite the `fetchAds` function so that all future ad requests will be routed through the proxy.
+If you are using OpenX's javascript library to get [Multi ad unit integration](http://docs.openx.com/ad_server/#adtagguide_synchjs_struct_multi.html), the initial request to `http://d.example.com/w/1.0/jstag` should be routed through proxy, which will automatically route the request for ads through the proxy.
 
+This will fetch OpenX's main javascript library. This proxy rewrite the `fetchAds` function and caches the result that all future ad requests will be routed through the proxy.
 
 The change results in something like this:
 
@@ -51,7 +52,7 @@ _example_
 <script src="http://localhost:9292/mock&url=http://your_ad_server.domain.com/w/1.0/acj?o=1133877895&callback=OX_1373833895&ju=http%3A//this.is.fake.com%3A3000/&jr=&tid=16&pgid=13822&auid=561878%2C564363%2C463317%2C304996&c.browser_width=xlarge&res=1920x1200x24&plg=swf%2Csl%2Cqt%2Cshk%2Cpm&ch=UTF-8&tz=300&ws=1287x526&vmt=1&sd=1" type="text/javascript"></script>
 ```
 
-Where the URL being passed in should be what is normally called by your openx configuration. Here at Vox Media it looks something like this:
+If you are calling [OpenX stand alone ads](http://docs.openx.com/ad_server/#adtagguide_structured_structure_xml.html) , you will need to route requests through the proxy. This means appending `http://localhost:9292/mock&url=` to all requests for ads.
 
 
 # Documentation
