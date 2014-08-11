@@ -7,7 +7,7 @@ require_relative 'lib/mock_openx'
 require_relative 'lib/mock_openx_js_tag.rb'
 
 
-# Load the openx mock library
+# Load the fake redis library
 require_relative 'lib/fake_redis'
 
 # YOLO, don't care
