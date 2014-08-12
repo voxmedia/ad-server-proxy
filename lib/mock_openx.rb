@@ -6,7 +6,6 @@ require 'erubis'
 
 REDIS_URI = "redis://localhost:6379/"
 CACHE_MINUTES_TO_LIVE = 5
-CONFIG_FILE_PATH = File.join(File.dirname(__FILE__),'..','ad-unit-overrides.yml')
 LIB_LOCATION = File.dirname(__FILE__)
 USER_AGENT = "User-Agent:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.125 Safari/537.36"
 
@@ -21,7 +20,7 @@ class MockOpenX
     @response_headers = {}
     @content = ''
     @content_structure = {}
-    @config_path = CONFIG_FILE_PATH
+    @config_path = ''
 
     @default_ad_values = {'group_id' => 0, 'width' => 1, 'height' => 1, 'html' => "<p>There was an error in your html</p>"}
 

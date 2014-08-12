@@ -22,8 +22,19 @@ require_relative 'lib/fake_redis'
 # YOLO, don't care
 set :protection, :except => [:json_csrf]
 
+OVERRIDE_PATH = File.join(File.dirname(__FILE__),'overrides.yml')
+
+if !File.exist?(OVERRIDE_PATH)
+  puts "Oops, we can not start. Please make sure that a #{File.basename(OVERRIDE_PATH)} "
+  puts "exists in #{File.dirname(OVERRIDE_PATH)}"
+  puts ""
+  puts "You can clone #{File.basename(OVERRIDE_PATH)}.example to start."
+  exit 1
+end
+
 configure do
   AD_SERVER = MockOpenX.new
+  AD_SERVER.set_config_path(OVERRIDE_PATH)
   JS_TAG = MockOpenXJsTag.new
 end
 
