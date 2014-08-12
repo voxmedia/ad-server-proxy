@@ -101,7 +101,6 @@ class MockOpenX
   def get_request_from_openx
     response = {}
     if !@redis.exists(key_for_request)
-      puts "Requesting #{@openx_url}"
       openx_response = HTTParty.get(@openx_url)
       response = {'body' => openx_response.body,
                   'code' => openx_response.code,
