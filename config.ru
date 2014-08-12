@@ -2,10 +2,19 @@
 # For faster local development with ads
 require 'sinatra'
 
+# If you want to use this to debug/develop
+# Will reload this every refresh
+begin
+  require "sinatra/reloader"
+  Dir.glob(File.join(File.dirname(__FILE__),"lib/*.rb")).each do |file|
+    also_reload file
+  end
+rescue LoadError
+  #no op
+end
 # Load the openx mock library
 require_relative 'lib/mock_openx'
-require_relative 'lib/mock_openx_js_tag.rb'
-
+require_relative 'lib/mock_openx_js_tag'
 
 # Load the fake redis library
 require_relative 'lib/fake_redis'

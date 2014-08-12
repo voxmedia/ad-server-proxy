@@ -1,4 +1,4 @@
-require 'rest_client'
+require 'httparty'
 require 'redis'
 require 'json'
 require 'yaml'
@@ -8,6 +8,7 @@ REDIS_URI = "redis://localhost:6379/"
 CACHE_MINUTES_TO_LIVE = 5
 CONFIG_FILE_PATH = File.join(File.dirname(__FILE__),'..','ad-unit-overrides.yml')
 LIB_LOCATION = File.dirname(__FILE__)
+USER_AGENT = "User-Agent:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.125 Safari/537.36"
 
 class MockOpenX
 
@@ -37,8 +38,7 @@ class MockOpenX
   end
 
   def request_jstag(url)
-    @url
-
+    @url = url
     @response_code = response.fetch('code',500)
     @response_headers = response.fetch('headers',{})
     @content = response.fetch('body','OH NO SOMETHING BAD HAPPENED')
@@ -68,7 +68,8 @@ class MockOpenX
      :content_type => "Content-Type",
      :pragma => "Pragma",
      :server => "Server",
-     :expires => "Expires"
+     :expires => "Expires",
+     :set_cookie => "Set-Cookie"
     }.map{|k,v| [v,@response_headers[k].to_s]}].merge({
       "Content-Length" => @content.length,
       "Content-Type" => "application/javascript"
@@ -99,10 +100,10 @@ class MockOpenX
   def get_request_from_openx
     response = {}
     if !@redis.exists(key_for_request)
-      openx_response = RestClient.get(@openx_url, {:referrer => @referrer})
-      response = {'body' => openx_response.to_s,
+      openx_response = HTTParty.get(@openx_url)
+      response = {'body' => openx_response.body,
                   'code' => openx_response.code,
-               'headers' => openx_response.headers}
+               'headers' => openx_response.headers.to_h}
       # Cache this for 5 minutes
       @redis.setex(key_for_request, CACHE_MINUTES_TO_LIVE*60, response.to_json)
     else

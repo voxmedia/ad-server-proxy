@@ -1,4 +1,4 @@
-require 'rest_client'
+# require 'rest_client'
 
 # Used to request this type of thing:
 #   http://ox-d.sbnation.com/w/1.0/jstag
@@ -31,7 +31,7 @@ class MockOpenXJsTag
     # We only need to do this once,
     # it doesn't change after the first one
     if !@has_been_requested
-      openx_response = RestClient.get(url)
+      openx_response = HTTParty.get(url)
       @content = rewrite_fetch_proxy(openx_response.to_s)
       @response_code = openx_response.code
       @response_headers = openx_response.headers
