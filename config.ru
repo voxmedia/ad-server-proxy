@@ -31,7 +31,6 @@ end
 get '/mock' do
   # openx_url = request.params['url']
   openx_url = CGI::unescape(request.query_string[4,100000])
-  puts "\n\n>> #{openx_url}\n\n"
   if openx_url
     AD_SERVER.request(openx_url, request.referrer)
     status  AD_SERVER.response_code
