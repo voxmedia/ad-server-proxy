@@ -16,7 +16,7 @@ ad_units: [
 
   {
     url_pattern: /voxmedia.com/,
-    unit_id: 11223344
+    unit_id: 11223344,
     html: '<div width="300px" height="250px"><img src="http://i.imgur.com/OsM2GBy.png"/></div>'
   }
 ]
