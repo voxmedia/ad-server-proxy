@@ -7,7 +7,6 @@ require 'erubis'
 REDIS_URI = "redis://localhost:6379/"
 CACHE_MINUTES_TO_LIVE = 5
 LIB_LOCATION = File.dirname(__FILE__)
-USER_AGENT = "User-Agent:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.125 Safari/537.36"
 
 class MockOpenX
 
@@ -79,7 +78,7 @@ class MockOpenX
     @response_code == 200
   end
 
-  private
+  protected
 
   def callback_name
     /callback=(OX_[0-9]+)/.match(@openx_url)[1]
@@ -142,7 +141,9 @@ class MockOpenX
     begin
       applicable_ad_units = get_config_ad_units_for_url
     rescue Psych::SyntaxError => err
-      puts "Ignoring config/ad-unit-overrides.yml until syntax error is resolved: #{err.message}"
+      puts "*"*80
+      puts "Ignoring #{File.basename(@config_path)} until syntax error is resolved:\n#{err.message}"
+      puts "*"*80
       applicable_ad_units = []
     end
 
