@@ -3,3 +3,6 @@
 
 // These should not be checked in... I don't think
 overrides.yml
+
+// cartridges are not to be checked in
+/cartridges/*.cart

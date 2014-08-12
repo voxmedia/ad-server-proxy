@@ -12,8 +12,10 @@ begin
 rescue LoadError
   #no op
 end
+
 # Load the openx mock library
 require_relative 'lib/mock_openx'
+require_relative 'lib/cartridge_openx'
 require_relative 'lib/mock_openx_js_tag'
 
 # Load the fake redis library
@@ -22,8 +24,10 @@ require_relative 'lib/fake_redis'
 # YOLO, don't care
 set :protection, :except => [:json_csrf]
 
+# This is the override.yml file, it defines what is overridden
+# per response from openx. This is required, but is ignored, you
+# must make your own, best to copy it from overrides.yml.example
 OVERRIDE_PATH = File.join(File.dirname(__FILE__),'overrides.yml')
-
 if !File.exist?(OVERRIDE_PATH)
   puts "Oops, we can not start. Please make sure that a #{File.basename(OVERRIDE_PATH)} "
   puts "exists in #{File.dirname(OVERRIDE_PATH)}"
@@ -33,7 +37,9 @@ if !File.exist?(OVERRIDE_PATH)
 end
 
 configure do
-  AD_SERVER = MockOpenX.new
+  CARTRIDGES_ENABLED = !ENV['USE_CARTRIDGES'].nil?
+  
+  AD_SERVER = CARTRIDGES_ENABLED ? CartridgeOpenX.new : MockOpenX.new
   AD_SERVER.set_config_path(OVERRIDE_PATH)
   JS_TAG = MockOpenXJsTag.new
 end

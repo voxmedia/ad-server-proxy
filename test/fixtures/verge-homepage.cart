@@ -1,0 +1,79 @@
+url_pattern: /daverge/
+enabled: true
+---
+OX_146140379({
+  "ads":{
+    "medium":"w",
+    "record_tmpl":"http://ox-d.sbnation.com/{medium}/1.0/{rtype}?ts={txn_state}",
+    "pixels":"http://us-u.openx.net/w/1.0/pd?plm=5&ph=0238cbd0c099a74a0f401d17ffde973b8e941e1d",
+    "adunits" : [
+      {
+        "auid":"96673",
+        "pgid":"9986",
+        "chain":[
+          {
+            "is_fallback":0,
+            "ad_id":"1835957",
+            "width":"1022",
+            "height":"341",
+            "html":"<script>\n  SBN.Campaigns.belowNavAdMarkup = \"<style type=\\\"text\\/css\\\">div#campaigns_top_hat {height:300px;}<\\/style><script type=\\\"text\\/javascript\\\">function pr_swfver(){var osf,osfd,i,axo=1,v=0,nv=navigator;if(nv.plugins&&nv.mimeTypes.length){osf=nv.plugins[\\\"Shockwave Flash\\\"];if(osf&&osf.description){osfd=osf.description;v=osfd.substring(osfd.indexOf(\\\".\\\")-2,osfd.indexOf(\\\".\\\")+2)}}else{try{try{v=new ActiveXObject(\\\"ShockwaveFlash.ShockwaveFlash\\\").getVariable(\\'$version\\').match(\\/[0-9]+.[0-9]\\/gi)[0].replace(\\/,\\/,\\\".\\\");}catch(f){for(i=5;axo!=null;i++){axo=new ActiveXObject(\\\"ShockwaveFlash.ShockwaveFlash.\\\"+i);v=i}}}catch(e){}}return v;}var pr_d=new Date();pr_d=pr_d.getDay()+\\\"|\\\"+pr_d.getHours()+\\\":\\\"+pr_d.getMinutes()+\\\"|\\\"+-pr_d.getTimezoneOffset()\\/60;var pr_postal=\\\"\\\";var pr_data=\\\"\\\";var pr_ies=\\\"\\\";var prinif=((window!=top)?1:0);var pr_redir=\\\"http%3A%2F%2Fox-d.sbnation.com%2Fw%2F1.0%2Frc%3Fts%3D1fHBpZD05OTg2fHJpZD0wMGNhODhlMS0wMWU0LTQ5MDEtOGU5OS03ZTJjMDcxYTJjNGN8cnQ9MTQwNzg2MDUxNnxhdWlkPTk2NjczfGF1bT1ETUlELldFQnxzaWQ9OTIzMXxwdWI9ODk0MXxwYz1VU0R8cmFpZD04ZDY2NWMwZS04OGRmLTRkYzAtOWRmMS04YTUyMTNlM2JlNmV8YWlkPTE4MzU5NTd8dD01fGFzPTEwMjJ4MzQxfGxpZD0xMDY0Njg4fG9pZD0yODQ0MzV8cD0xMDAwMDB8cHI9MTAwMDAwfGFkdj0xMzc2ODB8YWM9VVNEfHBtPVBSSUNJTkcuQ1BNfGJtPUJVWUlORy5HVUFSQU5URUVERVhDTFVTSVZFfHVyPWcyRHozcVo3R0I%26r%3D$CTURL$\\\";var pr_nua=navigator.userAgent.toLowerCase();var prHost=((\\\"https:\\\"==document.location.protocol)?\\\"https:\\/\\/\\\":\\\"http:\\/\\/\\\");var pr_sec=((prHost==\\'https:\\/\\/\\')?\\'&secure=1\\':\\'\\');var pr_pos=\\\"\\\",pr_inif=(window!=top);if(pr_inif){try{pr_pos=(typeof(parent.document)!=\\\"unknown\\\")?(((typeof(inDapIF)!=\\\"undefined\\\")&&(inDapIF))||(parent.document.domain==document.domain))?\\\"&pos=s\\\":\\\"&pos=x\\\":\\\"&pos=x\\\";}catch(e){pr_pos=\\\"&pos=x\\\";}if(pr_pos==\\\"&pos=x\\\"){var pr_u=new RegExp(\\\"[A-Za-z]+:[\\/][\\/][A-Za-z0-9.-]+\\\");var pr_t=this.window.document.referrer;var pr_m=pr_t.match(pr_u);if(pr_m!=null){pr_pos+=\\\"&dom=\\\"+pr_m[0];}}else{if(((typeof(inDapMgrIf)!=\\\"undefined\\\")&&(inDapMgrIf))||((typeof(isAJAX)!=\\\"undefined\\\")&&(isAJAX))){pr_pos+=\\\"&ajx=1\\\"}}}if(pr_postal!=\\\"\\\"){var przipmatch=\\/^\\\\d{5}$\\/;if(przipmatch.test(pr_postal)){pr_pos+=\\\"&postal=\\\"+pr_postal;}}if((pr_data!=\\\"\\\")&&(pr_data.indexOf(\\\"&\\\")<0)){pr_pos+=\\\"&data=\\\"+pr_data;}if((pr_ies!=\\\"\\\")&&(pr_ies.indexOf(\\\"&\\\")<0)){pr_pos+=\\\"&ies=\\\"+pr_ies;}var pr_s=\\\"ads.pointroll.com\\/PortalServe\\/?pid=2368231T03320140707204734&flash=\\\"+pr_swfver()+\\\"&time=\\\"+pr_d+\\\"&redir=\\\"+pr_redir+pr_pos+pr_sec+\\\"&inif=\\\"+prinif+\\\"&r=\\\"+Math.random();document.write(\\\"<scr\\\"+\\\"ipt type=\\'text\\/javascript\\' src=\\'\\\"+prHost+pr_s+\\\"\\'><\\/scr\\\"+\\\"ipt>\\\");<\\/script>\";\n</script>\n\n\n<noscript class=\"MOAT-voxmedia4590538913?moatClientLevel1=137680&amp;moatClientLevel2=284435&amp;moatClientLevel3=1064688&amp;moatClientLevel4=1835957&amp;moatClientSlicer1=8941&amp;moatClientSlicer2=96673\"></noscript>\n<script src=\"http://js.moatads.com/voxmedia4590538913/moatad.js#moatClientLevel1=137680&moatClientLevel2=284435&moatClientLevel3=1064688&moatClientLevel4=1835957&moatClientSlicer1=8941&moatClientSlicer2=96673\" type=\"text/javascript\"></script>",
+            "target":"_blank",
+            "ts":"1fHBpZD05OTg2fHJpZD0wMGNhODhlMS0wMWU0LTQ5MDEtOGU5OS03ZTJjMDcxYTJjNGN8cnQ9MTQwNzg2MDUxNnxhdWlkPTk2NjczfGF1bT1ETUlELldFQnxzaWQ9OTIzMXxwdWI9ODk0MXxwYz1VU0R8cmFpZD04ZDY2NWMwZS04OGRmLTRkYzAtOWRmMS04YTUyMTNlM2JlNmV8YWlkPTE4MzU5NTd8dD01fGFzPTEwMjJ4MzQxfGxpZD0xMDY0Njg4fG9pZD0yODQ0MzV8cD0xMDAwMDB8cHI9MTAwMDAwfGFkdj0xMzc2ODB8YWM9VVNEfHBtPVBSSUNJTkcuQ1BNfGJtPUJVWUlORy5HVUFSQU5URUVERVhDTFVTSVZFfHVyPWcyRHozcVo3R0I",
+            "type":"thirdparty",
+            "ad_url":"<script>\n  SBN.Campaigns.belowNavAdMarkup = \"<style type=\\\"text\\/css\\\">div#campaigns_top_hat {height:300px;}<\\/style><script type=\\\"text\\/javascript\\\">function pr_swfver(){var osf,osfd,i,axo=1,v=0,nv=navigator;if(nv.plugins&&nv.mimeTypes.length){osf=nv.plugins[\\\"Shockwave Flash\\\"];if(osf&&osf.description){osfd=osf.description;v=osfd.substring(osfd.indexOf(\\\".\\\")-2,osfd.indexOf(\\\".\\\")+2)}}else{try{try{v=new ActiveXObject(\\\"ShockwaveFlash.ShockwaveFlash\\\").getVariable(\\'$version\\').match(\\/[0-9]+.[0-9]\\/gi)[0].replace(\\/,\\/,\\\".\\\");}catch(f){for(i=5;axo!=null;i++){axo=new ActiveXObject(\\\"ShockwaveFlash.ShockwaveFlash.\\\"+i);v=i}}}catch(e){}}return v;}var pr_d=new Date();pr_d=pr_d.getDay()+\\\"|\\\"+pr_d.getHours()+\\\":\\\"+pr_d.getMinutes()+\\\"|\\\"+-pr_d.getTimezoneOffset()\\/60;var pr_postal=\\\"\\\";var pr_data=\\\"\\\";var pr_ies=\\\"\\\";var prinif=((window!=top)?1:0);var pr_redir=\\\"http%3A%2F%2Fox-d.sbnation.com%2Fw%2F1.0%2Frc%3Fts%3D1fHBpZD05OTg2fHJpZD0wMGNhODhlMS0wMWU0LTQ5MDEtOGU5OS03ZTJjMDcxYTJjNGN8cnQ9MTQwNzg2MDUxNnxhdWlkPTk2NjczfGF1bT1ETUlELldFQnxzaWQ9OTIzMXxwdWI9ODk0MXxwYz1VU0R8cmFpZD04ZDY2NWMwZS04OGRmLTRkYzAtOWRmMS04YTUyMTNlM2JlNmV8YWlkPTE4MzU5NTd8dD01fGFzPTEwMjJ4MzQxfGxpZD0xMDY0Njg4fG9pZD0yODQ0MzV8cD0xMDAwMDB8cHI9MTAwMDAwfGFkdj0xMzc2ODB8YWM9VVNEfHBtPVBSSUNJTkcuQ1BNfGJtPUJVWUlORy5HVUFSQU5URUVERVhDTFVTSVZFfHVyPWcyRHozcVo3R0I%26r%3D$CTURL$\\\";var pr_nua=navigator.userAgent.toLowerCase();var prHost=((\\\"https:\\\"==document.location.protocol)?\\\"https:\\/\\/\\\":\\\"http:\\/\\/\\\");var pr_sec=((prHost==\\'https:\\/\\/\\')?\\'&secure=1\\':\\'\\');var pr_pos=\\\"\\\",pr_inif=(window!=top);if(pr_inif){try{pr_pos=(typeof(parent.document)!=\\\"unknown\\\")?(((typeof(inDapIF)!=\\\"undefined\\\")&&(inDapIF))||(parent.document.domain==document.domain))?\\\"&pos=s\\\":\\\"&pos=x\\\":\\\"&pos=x\\\";}catch(e){pr_pos=\\\"&pos=x\\\";}if(pr_pos==\\\"&pos=x\\\"){var pr_u=new RegExp(\\\"[A-Za-z]+:[\\/][\\/][A-Za-z0-9.-]+\\\");var pr_t=this.window.document.referrer;var pr_m=pr_t.match(pr_u);if(pr_m!=null){pr_pos+=\\\"&dom=\\\"+pr_m[0];}}else{if(((typeof(inDapMgrIf)!=\\\"undefined\\\")&&(inDapMgrIf))||((typeof(isAJAX)!=\\\"undefined\\\")&&(isAJAX))){pr_pos+=\\\"&ajx=1\\\"}}}if(pr_postal!=\\\"\\\"){var przipmatch=\\/^\\\\d{5}$\\/;if(przipmatch.test(pr_postal)){pr_pos+=\\\"&postal=\\\"+pr_postal;}}if((pr_data!=\\\"\\\")&&(pr_data.indexOf(\\\"&\\\")<0)){pr_pos+=\\\"&data=\\\"+pr_data;}if((pr_ies!=\\\"\\\")&&(pr_ies.indexOf(\\\"&\\\")<0)){pr_pos+=\\\"&ies=\\\"+pr_ies;}var pr_s=\\\"ads.pointroll.com\\/PortalServe\\/?pid=2368231T03320140707204734&flash=\\\"+pr_swfver()+\\\"&time=\\\"+pr_d+\\\"&redir=\\\"+pr_redir+pr_pos+pr_sec+\\\"&inif=\\\"+prinif+\\\"&r=\\\"+Math.random();document.write(\\\"<scr\\\"+\\\"ipt type=\\'text\\/javascript\\' src=\\'\\\"+prHost+pr_s+\\\"\\'><\\/scr\\\"+\\\"ipt>\\\");<\\/script>\";\n</script>\n\n\n<noscript class=\"MOAT-voxmedia4590538913?moatClientLevel1=137680&amp;moatClientLevel2=284435&amp;moatClientLevel3=1064688&amp;moatClientLevel4=1835957&amp;moatClientSlicer1=8941&amp;moatClientSlicer2=96673\"></noscript>\n<script src=\"http://js.moatads.com/voxmedia4590538913/moatad.js#moatClientLevel1=137680&moatClientLevel2=284435&moatClientLevel3=1064688&moatClientLevel4=1835957&moatClientSlicer1=8941&moatClientSlicer2=96673\" type=\"text/javascript\"></script>"
+          }
+        ]
+      },
+      {
+        "auid":"96674",
+        "pgid":"9986",
+        "chain":[
+          {
+            "is_fallback":0,
+            "ad_id":"1835958",
+            "width":"300",
+            "height":"250",
+            "html":"<a href='http://ox-d.sbnation.com/w/1.0/rc?ts=1fHBpZD05OTg2fHJpZD02ZjIwOWZlNC05ODVlLTQ4NTQtYjQ3Yi05N2E4ODJhOWYyZmF8cnQ9MTQwNzg2MDUxNnxhdWlkPTk2Njc0fGF1bT1ETUlELldFQnxzaWQ9OTIzMXxwdWI9ODk0MXxwYz1VU0R8cmFpZD04ZDY2NWMwZS04OGRmLTRkYzAtOWRmMS04YTUyMTNlM2JlNmV8YWlkPTE4MzU5NTh8dD0xfGFzPTMwMHgyNTB8bGlkPTEwNjQ2ODh8b2lkPTI4NDQzNXxwPTEwMDAwMHxwcj0xMDAwMDB8YWR2PTEzNzY4MHxhYz1VU0R8cG09UFJJQ0lORy5DUE18Ym09QlVZSU5HLkdVQVJBTlRFRURFWENMVVNJVkV8dXI9T2NEcmNVUDZQaA' target='_blank'><img src='http://ox-i.sbnation.com/023/0238cbd0c099a74a0f401d17ffde973b8e941e1d/460/460211b52052a4058ce032edf5a95f35.jpg' height='250' width='300' border='0' alt=''/></a>\n",
+            "target":"_blank",
+            "ts":"1fHBpZD05OTg2fHJpZD02ZjIwOWZlNC05ODVlLTQ4NTQtYjQ3Yi05N2E4ODJhOWYyZmF8cnQ9MTQwNzg2MDUxNnxhdWlkPTk2Njc0fGF1bT1ETUlELldFQnxzaWQ9OTIzMXxwdWI9ODk0MXxwYz1VU0R8cmFpZD04ZDY2NWMwZS04OGRmLTRkYzAtOWRmMS04YTUyMTNlM2JlNmV8YWlkPTE4MzU5NTh8dD0xfGFzPTMwMHgyNTB8bGlkPTEwNjQ2ODh8b2lkPTI4NDQzNXxwPTEwMDAwMHxwcj0xMDAwMDB8YWR2PTEzNzY4MHxhYz1VU0R8cG09UFJJQ0lORy5DUE18Ym09QlVZSU5HLkdVQVJBTlRFRURFWENMVVNJVkV8dXI9T2NEcmNVUDZQaA",
+            "type":"image",
+            "ad_url":"http://ox-i.sbnation.com/023/0238cbd0c099a74a0f401d17ffde973b8e941e1d/460/460211b52052a4058ce032edf5a95f35.jpg"
+          }
+        ]
+      },
+      {
+        "auid":"277814",
+        "pgid":"9986",
+        "chain":[
+          {
+            "is_fallback":0,
+            "ad_id":"1835958",
+            "width":"300",
+            "height":"250",
+            "html":"<a href='http://ox-d.sbnation.com/w/1.0/rc?ts=1fHBpZD05OTg2fHJpZD1hZjljODU4My0xNGIzLTRmZjYtYjkzMy02ZjI2OGM3Yjc5YmJ8cnQ9MTQwNzg2MDUxNnxhdWlkPTI3NzgxNHxhdW09RE1JRC5XRUJ8c2lkPTkyMzF8cHViPTg5NDF8cGM9VVNEfHJhaWQ9OGQ2NjVjMGUtODhkZi00ZGMwLTlkZjEtOGE1MjEzZTNiZTZlfGFpZD0xODM1OTU4fHQ9MXxhcz0zMDB4MjUwfGxpZD0xMDY0Njg4fG9pZD0yODQ0MzV8cD0xMDAwMDB8cHI9MTAwMDAwfGFkdj0xMzc2ODB8YWM9VVNEfHBtPVBSSUNJTkcuQ1BNfGJtPUJVWUlORy5HVUFSQU5URUVERVhDTFVTSVZFfHVyPVhiVGtLUVU0Y28' target='_blank'><img src='http://ox-i.sbnation.com/023/0238cbd0c099a74a0f401d17ffde973b8e941e1d/460/460211b52052a4058ce032edf5a95f35.jpg' height='250' width='300' border='0' alt=''/></a>\n",
+            "target":"_blank",
+            "ts":"1fHBpZD05OTg2fHJpZD1hZjljODU4My0xNGIzLTRmZjYtYjkzMy02ZjI2OGM3Yjc5YmJ8cnQ9MTQwNzg2MDUxNnxhdWlkPTI3NzgxNHxhdW09RE1JRC5XRUJ8c2lkPTkyMzF8cHViPTg5NDF8cGM9VVNEfHJhaWQ9OGQ2NjVjMGUtODhkZi00ZGMwLTlkZjEtOGE1MjEzZTNiZTZlfGFpZD0xODM1OTU4fHQ9MXxhcz0zMDB4MjUwfGxpZD0xMDY0Njg4fG9pZD0yODQ0MzV8cD0xMDAwMDB8cHI9MTAwMDAwfGFkdj0xMzc2ODB8YWM9VVNEfHBtPVBSSUNJTkcuQ1BNfGJtPUJVWUlORy5HVUFSQU5URUVERVhDTFVTSVZFfHVyPVhiVGtLUVU0Y28",
+            "type":"image",
+            "ad_url":"http://ox-i.sbnation.com/023/0238cbd0c099a74a0f401d17ffde973b8e941e1d/460/460211b52052a4058ce032edf5a95f35.jpg"
+          }
+        ]
+      },
+      {
+        "auid":"321091",
+        "chain":[
+          {
+            "is_fallback":0,
+            "ad_id":"1835983",
+            "width":"728",
+            "height":"90",
+            "html":"<a href='http://ox-d.sbnation.com/w/1.0/rc?ts=1fHJpZD0yODZhODc4Ni1jZDk5LTRjNjctYjNlZC1iZGVhMjhlZDI2ZDF8cnQ9MTQwNzg2MDUxNnxhdWlkPTMyMTA5MXxhdW09RE1JRC5XRUJ8c2lkPTkyMzF8cHViPTg5NDF8cGM9VVNEfHJhaWQ9OGQ2NjVjMGUtODhkZi00ZGMwLTlkZjEtOGE1MjEzZTNiZTZlfGFpZD0xODM1OTgzfHQ9MXxhcz03Mjh4OTB8bGlkPTEwNjQ3MDR8b2lkPTI4NDQzNXxwPTE1MDAwMHxwcj0xNTAwMDB8YWR2PTEzNzY4MHxhYz1VU0R8cG09UFJJQ0lORy5DUE18Ym09QlVZSU5HLkdVQVJBTlRFRURFWENMVVNJVkV8dXI9TkVUYW52MHREeA' target='_blank'><img src='http://ox-i.sbnation.com/023/0238cbd0c099a74a0f401d17ffde973b8e941e1d/f86/f86f4b5cb4de07778ac23c95614a6e72.jpg' height='90' width='728' border='0' alt=''/></a>\n",
+            "target":"_blank",
+            "ts":"1fHJpZD0yODZhODc4Ni1jZDk5LTRjNjctYjNlZC1iZGVhMjhlZDI2ZDF8cnQ9MTQwNzg2MDUxNnxhdWlkPTMyMTA5MXxhdW09RE1JRC5XRUJ8c2lkPTkyMzF8cHViPTg5NDF8cGM9VVNEfHJhaWQ9OGQ2NjVjMGUtODhkZi00ZGMwLTlkZjEtOGE1MjEzZTNiZTZlfGFpZD0xODM1OTgzfHQ9MXxhcz03Mjh4OTB8bGlkPTEwNjQ3MDR8b2lkPTI4NDQzNXxwPTE1MDAwMHxwcj0xNTAwMDB8YWR2PTEzNzY4MHxhYz1VU0R8cG09UFJJQ0lORy5DUE18Ym09QlVZSU5HLkdVQVJBTlRFRURFWENMVVNJVkV8dXI9TkVUYW52MHREeA",
+            "type":"image",
+            "ad_url":"http://ox-i.sbnation.com/023/0238cbd0c099a74a0f401d17ffde973b8e941e1d/f86/f86f4b5cb4de07778ac23c95614a6e72.jpg"
+          }
+        ]
+      }
+    ]
+  }
+});

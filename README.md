@@ -102,13 +102,15 @@ ad_units: [
 ]
 ```
 
-## Authors
+## Contributors
 
-* Niv Shah – [@nivshah](http://github.com/nivshah)
-* Casey Kolderup – [@ckolderup](http://github.com/ckolderup)
-* Clif Reeder – [@clifff](http://github.com/clifff)
-* Skip Baney – [@twelvelabs](http://github.com/twelvelabs)
-* Brian Anderson – [@banderson623](http://github.com/banderson623)
+* Niv Shah – [@nivshah](http://github.com/nivshah) (words)
+* Casey Kolderup – [@ckolderup](http://github.com/ckolderup) (ruby genius)
+* Clif Reeder – [@clifff](http://github.com/clifff) (Koala picture sender)
+* Michael Lovitt – [@lovitt](https://github.com/lovitt) (cartridge mastermind)
+* Skip Baney – [@twelvelabs](http://github.com/twelvelabs) (fixing bugs)
+* Josh Laincz – [@zohf](http://github.com/zohf)] (unsuspecting beta tester)
+* Brian Anderson – [@banderson623](http://github.com/banderson623)] (bug maker)
 
 ## Contributing
 

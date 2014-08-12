@@ -21,7 +21,7 @@ class MockOpenX
     @content_structure = {}
     @config_path = ''
 
-    @default_ad_values = {'group_id' => 0, 'width' => 1, 'height' => 1, 'html' => "<p>There was an error in your html</p>"}
+    @default_ad_values = {'group_id' => 0, 'kind' => 'html', 'width' => 1, 'height' => 1, 'html' => "<p>..something..should..be..here..</p>"}
 
     begin
       @redis = Redis.new(:url => REDIS_URI)
@@ -33,13 +33,6 @@ class MockOpenX
 
   def set_config_path(path)
     @config_path = path
-  end
-
-  def request_jstag(url)
-    @url = url
-    @response_code = response.fetch('code',500)
-    @response_headers = response.fetch('headers',{})
-    @content = response.fetch('body','OH NO SOMETHING BAD HAPPENED')
   end
 
   def request(openx_url, referrer)
@@ -54,6 +47,7 @@ class MockOpenX
     get_request_from_openx
 
     if success?
+      puts "\nSuccess!\n"
       remove_callback
       insert_custom_ad_units
       add_callback
@@ -119,7 +113,7 @@ class MockOpenX
 
   def remove_callback
     # Removes OX_2144423213(...) from the string
-    @content.gsub!(/OX_([0-9]+\()/,'')
+    @content.gsub!(/^\s*OX_([0-9]+\()/,'')
     @content.gsub!(/\);$/,'')
   end
 
