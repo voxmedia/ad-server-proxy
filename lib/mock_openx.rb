@@ -8,6 +8,7 @@ REDIS_URI = "redis://localhost:6379/"
 CACHE_MINUTES_TO_LIVE = 5
 CONFIG_FILE_PATH = File.join(File.dirname(__FILE__),'..','ad-unit-overrides.yml')
 LIB_LOCATION = File.dirname(__FILE__)
+USER_AGENT = "User-Agent:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.125 Safari/537.36"
 
 class MockOpenX
 
@@ -68,7 +69,8 @@ class MockOpenX
      :content_type => "Content-Type",
      :pragma => "Pragma",
      :server => "Server",
-     :expires => "Expires"
+     :expires => "Expires",
+     :set_cookie => "Set-Cookie"
     }.map{|k,v| [v,@response_headers[k].to_s]}].merge({
       "Content-Length" => @content.length,
       "Content-Type" => "application/javascript"
@@ -99,7 +101,13 @@ class MockOpenX
   def get_request_from_openx
     response = {}
     if !@redis.exists(key_for_request)
-      openx_response = RestClient.get(@openx_url, {:referrer => @referrer})
+      puts "Requesting #{@openx_url}"
+      openx_response = RestClient.get(@openx_url)#, {:referrer => @referrer,
+                                                 #  :user_agent => USER_AGENT,
+                                                 #  :accept => "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
+                                                 #  :cookies => @cookies
+                                                 #  })
+
       response = {'body' => openx_response.to_s,
                   'code' => openx_response.code,
                'headers' => openx_response.headers}
