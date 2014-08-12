@@ -1,7 +1,7 @@
 require 'test/unit'
 require_relative '../lib/fake_redis.rb'
 require_relative '../lib/mock_openx.rb'
-require_relative '../lib/cartridge_based_openx.rb'
+require_relative '../lib/cartridge_openx.rb'
 
 # Test our entries API
 class CartridgeOpenXProxyTest < Test::Unit::TestCase
@@ -13,7 +13,6 @@ class CartridgeOpenXProxyTest < Test::Unit::TestCase
     config_path = File.join(File.dirname(__FILE__),'fixtures','overrides.yml')
 
     @ad_server = CartridgeOpenX.new()
-    @ad_server.debug_cartridges
     @ad_server.load_cartridges(cartridge_path)
     @ad_server.set_config_path(config_path)
   end
@@ -25,5 +24,8 @@ class CartridgeOpenXProxyTest < Test::Unit::TestCase
     assert_equal 200, @ad_server.response_code
     assert @ad_server.content.include?('"ads": {')
     assert @ad_server.content.include?('"adunits":')
+    assert @ad_server.content.include?('SBN.Campaigns.belowNavAdMarkup')
   end
+
+
 end

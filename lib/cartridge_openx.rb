@@ -41,7 +41,7 @@ class CartridgeOpenX < MockOpenX
   protected
 
   def get_first_cartridge_for_request
-    @cartridges.detect(""){|cart| Regexp.new(cart[0].to_s) =~ @openx_url}
+    @cartridges.detect(""){|cart| Regexp.new(cart[0].to_s) =~ chorus_url}
   end
 
   def get_request_from_openx
