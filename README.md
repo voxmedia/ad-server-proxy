@@ -5,7 +5,7 @@ A small ad-server proxy that speeds up local development ad server requests and 
 
 1. Download or clone this repository
 2. Install the required gems via `bundle install`
-3. Create your own `ad-unit-overrides.yml` and customize it. (To start, I would suggest copying or renaming `ad-unit-overrides.yml.example`)
+3. Create your own `overrides.yml` and customize it. (To start, I would suggest copying or renaming `overrides.yml.example`)
 4. Start the server `bundle exec rackup`. This starts on Sinatra's default port: 9292. _(use `-p <port number>` to start it on a different port)_
 
 # Proxying Things
@@ -73,7 +73,7 @@ To overcome these limitations here is a small proxy server that does the followi
 
 1. When enabled, Chorus will proxy the full ad server request to a small Sinatra app.
 2. The proxy app will respond with a redis-backed cached version if this request has been made before, if not it will request this information from the ad server and cache it.
-3. the proxy app then replaces or inserts any overridden ad units defined in `/config/ad-unit-overrides.yml`
+3. the proxy app then replaces or inserts any overridden ad units defined in `/overrides.yml`
 4. It responds with a json string, formatted as through it was a response from the ad server.
 
 ### Benefits
