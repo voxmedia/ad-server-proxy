@@ -63,7 +63,6 @@ class MockOpenX
   end
 
   def headers
-    # puts "headers: #{@response_headers.inspect}"
     # Only returns the ones I want, with the correct key conversion
     Hash[{:cache_control => "Cache-Control",
      :content_type => "Content-Type",
