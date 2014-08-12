@@ -27,7 +27,7 @@ class CartridgeOpenX < MockOpenX
         content = cart.match(/^\s*OX_[0-9]+\({.*/im)
         if target.size > 1 && content.size > 0
           # matching regexp is the hash key
-          @cartridges[target[1].gsub('/','')] = content[0]
+          @cartridges[target[1].gsub(/^\/|\/$/,'')] = content[0]
         end
       end
     end
@@ -41,12 +41,14 @@ class CartridgeOpenX < MockOpenX
   protected
 
   def get_first_cartridge_for_request
-    @cartridges.detect(""){|cart| Regexp.new(cart[0].to_s) =~ chorus_url}
+    cart = @cartridges.detect(){|cart|
+      Regexp.new(cart[0].to_s) =~ chorus_url
+    }
+    cart.nil? ? "" : cart[1]
   end
 
   def get_request_from_openx
-    cart = get_first_cartridge_for_request
-    content = cart[1]
+    content = get_first_cartridge_for_request
 
     @response_code = content.size > 0 ? 200 : 404
     @content = content || ""

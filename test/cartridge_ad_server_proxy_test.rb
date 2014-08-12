@@ -6,6 +6,8 @@ require_relative '../lib/cartridge_openx.rb'
 # Test our entries API
 class CartridgeOpenXProxyTest < Test::Unit::TestCase
   SAMPLE_OPENX_URL = 'http://ox-d.sbnation.com/w/1.0/acj?o=6565676137&callback=OX_6565676137&ju=http%3A//local.daverge.com%3A3000/2014/4/22/5638658/Resident-Evil-6-movie-production-begins&jr=&tid=17&pgid=13823&auid=561878%2C623001%2C549376%2C551724%2C304996&c.browser_width=xlarge&c.device_type=desktop&c.network=polygon&c.entry_id=5402699&c.entry_type=article&c.entry_group=12127%2C12129%2C12131%2C12153%2C12463&c.hub_page=playstation%2Cnintendo%2Cxbox-360&c.forum=resident-evil&c.polygon_game=9315&c.polygon_game_genre=15&res=1920x1200x24&plg=swf%2Csl%2Cqt%2Cshk%2Cpm&ch=UTF-8&tz=300&ws=1486x962&vmt=1&si=6319208572&sd=4'
+  SAMPLE_OPENX_URL_FOR_POLY = 'http://ox-d.sbnation.com/w/1.0/acj?o=6565676137&callback=OX_6565676137&ju=http%3A//local.polygon.com%3A3000/2014/4/22/5638658/Resident-Evil-6-movie-production-begins&jr=&tid=17&pgid=13823&auid=561878%2C623001%2C549376%2C551724%2C304996&c.browser_width=xlarge&c.device_type=desktop&c.network=polygon&c.entry_id=5402699&c.entry_type=article&c.entry_group=12127%2C12129%2C12131%2C12153%2C12463&c.hub_page=playstation%2Cnintendo%2Cxbox-360&c.forum=resident-evil&c.polygon_game=9315&c.polygon_game_genre=15&res=1920x1200x24&plg=swf%2Csl%2Cqt%2Cshk%2Cpm&ch=UTF-8&tz=300&ws=1486x962&vmt=1&si=6319208572&sd=4'
+  SAMPLE_OPENX_URL_FOR_SBN = 'http://ox-d.sbnation.com/w/1.0/acj?o=6565676137&callback=OX_6565676137&ju=http%3A//local.sbnation.com%3A3000/2014/4/22/5638658/Resident-Evil-6-movie-production-begins&jr=&tid=17&pgid=13823&auid=561878%2C623001%2C549376%2C551724%2C304996&c.browser_width=xlarge&c.device_type=desktop&c.network=polygon&c.entry_id=5402699&c.entry_type=article&c.entry_group=12127%2C12129%2C12131%2C12153%2C12463&c.hub_page=playstation%2Cnintendo%2Cxbox-360&c.forum=resident-evil&c.polygon_game=9315&c.polygon_game_genre=15&res=1920x1200x24&plg=swf%2Csl%2Cqt%2Cshk%2Cpm&ch=UTF-8&tz=300&ws=1486x962&vmt=1&si=6319208572&sd=4'
 
   def setup
     # Not a real fixture
@@ -27,5 +29,17 @@ class CartridgeOpenXProxyTest < Test::Unit::TestCase
     assert @ad_server.content.include?('SBN.Campaigns.belowNavAdMarkup')
   end
 
+  # Test that we can retrieve a specific thing
+  def test_request_is_using_correct_cartridge
+    @ad_server.request(SAMPLE_OPENX_URL_FOR_POLY,'http://polygons.com')
+    # assert_equal 200, @ad_server.response_code
+    assert @ad_server.content.include?('1111222211111'), "should be a polygon article cartridge got:\n\n #{@ad_server.content}"
+  end
+
+  # Test that we can retrieve a specific thing
+  def test_will_for_for_non_matching_cart
+    @ad_server.request(SAMPLE_OPENX_URL_FOR_SBN,'http://polygons.com')
+    assert_equal 404, @ad_server.response_code
+  end
 
 end

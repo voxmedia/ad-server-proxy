@@ -47,7 +47,6 @@ class MockOpenX
     get_request_from_openx
 
     if success?
-      puts "\nSuccess!\n"
       remove_callback
       insert_custom_ad_units
       add_callback
@@ -80,7 +79,7 @@ class MockOpenX
 
   # URL of the page that this is being requested for.
   def chorus_url
-   /ju=(.*)&/.match(@openx_url)[1]
+   /ju=(.*)&jr/.match(@openx_url)[1]
   end
 
   # Strip out the random stuff generated each time,

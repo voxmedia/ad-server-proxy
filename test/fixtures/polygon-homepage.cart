@@ -1,0 +1,45 @@
+url_pattern: /polygon.com/
+enabled: true
+---
+OX_1834793225({
+  "ads":{
+    "medium":"w",
+    "record_tmpl":"http://ox-d.sbnation.com/{medium}/1.0/{rtype}?ts={txn_state}",
+    "pixels":"http://us-u.openx.net/w/1.0/pd?plm=5&ph=0238cbd0c099a74a0f401d17ffde973b8e941e1d",
+    "adunits" : [
+      {
+        "auid":"12321312",
+        "pgid":"13822",
+        "chain":[
+          {
+            "is_fallback":0,
+            "ad_id":"1834837",
+            "width":"728",
+            "height":"90",
+            "html":"<script type=\"text/javascript\"><!--\ngoogle_ad_client = \"ca-pub-5405132603504384\";\n/* Polygon_Web_US_HP_728x90_Zone 1 */\ngoogle_ad_slot = \"2785835341/5739251101\";\ngoogle_ad_width = 728;\ngoogle_ad_height = 90;\n//-->\n</script>\n<script type=\"text/javascript\"\nsrc=\"//pagead2.googlesyndication.com/pagead/show_ads.js\">\n</script>",
+            "target":"_blank",
+            "ts":"1fHBpZD0xMzgyMnxyaWQ9MDhjNWU2MWEtOGUzNS00YjQwLWFmZGEtNTNmNWRiMzBmZGQwfHJ0PTE0MDc4NzIzMjR8YXVpZD0zMDQ5OTV8YXVtPURNSUQuV0VCfHNpZD02Mzc1MXxwdWI9Nzg1NDV8cGM9VVNEfHJhaWQ9NGRiMmI4NDAtNjZlMy00ZWY2LTg5MjEtMGMwNThhNWQwYzFifGFpZD0xODM0ODM3fHQ9NHxhcz03Mjh4OTB8bGlkPTEwNjQwNTh8b2lkPTI4NDYyNXxwPTEyNTB8cHI9MTI1MHxhZHY9MTQxMTY4fGFjPVVTRHxwbT1QUklDSU5HLkNQTXxibT1CVVlJTkcuTk9OR1VBUkFOVEVFRHxsYz0yfGx3PTE0NDB8dXI9T2s0QlBwTG82Sw",
+            "type":"html",
+            "ad_url":"<script type=\"text/javascript\"><!--\ngoogle_ad_client = \"ca-pub-5405132603504384\";\n/* Polygon_Web_US_HP_728x90_Zone 1 */\ngoogle_ad_slot = \"2785835341/5739251101\";\ngoogle_ad_width = 728;\ngoogle_ad_height = 90;\n//-->\n</script>\n<script type=\"text/javascript\"\nsrc=\"//pagead2.googlesyndication.com/pagead/show_ads.js\">\n</script>"
+          }
+        ]
+      },
+      {
+        "auid":"304996",
+        "chain":[
+          {
+            "is_fallback":0,
+            "ad_id":"1834836",
+            "width":"728",
+            "height":"90",
+            "html":"<script language=\"JavaScript\" type=\"text/javascript\">\nrp_account   = '7470';\nrp_site      = '40686';\nrp_zonesize  = '169210-2';\nrp_adtype    = 'js';\nrp_smartfile = '[SMART FILE URL]';\n</script>\n<script type=\"text/javascript\" src=\"http://ads.rubiconproject.com/ad/7470.js\"></script>",
+            "target":"_blank",
+            "ts":"1fHJpZD00NTM0MTY5MS00YjYyLTQ1ZjUtODhiNy05MmM1YmRkOTkxNTV8cnQ9MTQwNzg3MjMyNHxhdWlkPTMwNDk5NnxhdW09RE1JRC5XRUJ8c2lkPTYzNzUxfHB1Yj03ODU0NXxwYz1VU0R8cmFpZD00ZGIyYjg0MC02NmUzLTRlZjYtODkyMS0wYzA1OGE1ZDBjMWJ8YWlkPTE4MzQ4MzZ8dD00fGFzPTcyOHg5MHxsaWQ9MTA2NDA1N3xvaWQ9Mjg0NjI1fHA9MTI1MHxwcj0xMjUwfGFkdj0xNDExNjh8YWM9VVNEfHBtPVBSSUNJTkcuQ1BNfGJtPUJVWUlORy5OT05HVUFSQU5URUVEfGxjPTJ8bHc9MTQ0MHx1cj1icVFSRnpLU1NM",
+            "type":"html",
+            "ad_url":"<script language=\"JavaScript\" type=\"text/javascript\">\nrp_account   = '7470';\nrp_site      = '40686';\nrp_zonesize  = '169210-2';\nrp_adtype    = 'js';\nrp_smartfile = '[SMART FILE URL]';\n</script>\n<script type=\"text/javascript\" src=\"http://ads.rubiconproject.com/ad/7470.js\"></script>"
+          }
+        ]
+      }
+    ]
+  }
+});
