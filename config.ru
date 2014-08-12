@@ -7,7 +7,6 @@ require 'sinatra'
 begin
   require "sinatra/reloader"
   Dir.glob(File.join(File.dirname(__FILE__),"lib/*.rb")).each do |file|
-    puts "also reloading: #{file}"
     also_reload file
   end
 rescue LoadError
