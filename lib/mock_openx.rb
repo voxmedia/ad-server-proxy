@@ -1,4 +1,4 @@
-require 'rest_client'
+require 'httparty'
 require 'redis'
 require 'json'
 require 'yaml'
@@ -38,8 +38,7 @@ class MockOpenX
   end
 
   def request_jstag(url)
-    @url
-
+    @url = url
     @response_code = response.fetch('code',500)
     @response_headers = response.fetch('headers',{})
     @content = response.fetch('body','OH NO SOMETHING BAD HAPPENED')
@@ -64,6 +63,7 @@ class MockOpenX
   end
 
   def headers
+    # puts "headers: #{@response_headers.inspect}"
     # Only returns the ones I want, with the correct key conversion
     Hash[{:cache_control => "Cache-Control",
      :content_type => "Content-Type",
@@ -102,15 +102,10 @@ class MockOpenX
     response = {}
     if !@redis.exists(key_for_request)
       puts "Requesting #{@openx_url}"
-      openx_response = RestClient.get(@openx_url)#, {:referrer => @referrer,
-                                                 #  :user_agent => USER_AGENT,
-                                                 #  :accept => "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
-                                                 #  :cookies => @cookies
-                                                 #  })
-
-      response = {'body' => openx_response.to_s,
+      openx_response = HTTParty.get(@openx_url)
+      response = {'body' => openx_response.body,
                   'code' => openx_response.code,
-               'headers' => openx_response.headers}
+               'headers' => openx_response.headers.to_h}
       # Cache this for 5 minutes
       @redis.setex(key_for_request, CACHE_MINUTES_TO_LIVE*60, response.to_json)
     else
