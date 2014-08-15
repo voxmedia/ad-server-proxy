@@ -38,7 +38,6 @@ end
 
 configure do
   CARTRIDGES_ENABLED = !ENV['USE_CARTRIDGES'].nil?
-  
   AD_SERVER = CARTRIDGES_ENABLED ? CartridgeOpenX.new : MockOpenX.new
   AD_SERVER.set_config_path(OVERRIDE_PATH)
   JS_TAG = MockOpenXJsTag.new
@@ -69,6 +68,10 @@ get '/jstag' do
   else
     [500,"Can't connect"]
   end
+end
+
+get '/cartridges' do
+  erb :cartridges
 end
 
 run Sinatra::Application

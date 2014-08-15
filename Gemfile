@@ -10,4 +10,4 @@ gem 'vcr',           "~>2.9.2"
 
 # Used for reloading server code
 # and libraries on ever refresh
-# gem "sinatra-reloader"
+gem "sinatra-reloader"

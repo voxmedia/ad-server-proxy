@@ -79,7 +79,8 @@ class MockOpenX
 
   # URL of the page that this is being requested for.
   def chorus_url
-   /ju=(.*)&jr/.match(@openx_url)[1]
+    match = /ju=(.*)&jr/.match(@openx_url)
+    match[1]
   end
 
   # Strip out the random stuff generated each time,
