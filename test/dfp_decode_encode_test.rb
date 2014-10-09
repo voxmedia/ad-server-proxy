@@ -36,13 +36,11 @@ class DFPDecodeEncodeTest < Test::Unit::TestCase
   end
 
   def test_encoding_works_on_full_string
-    # sizes = [10,20,40,80,200,1000,10_000]
     @response.each do |slot|
       slot_info = slot.values.first
       html = slot_info.fetch('_html_','')
-      # assert_equal html.length, DFPString.new(html).decode.encode.length
-      # assert_equal html[0..(len)], DFPString.new(html).decode.encode[0..(len)]
       recode = DFPString.new(html).decode.encode
+      # Big diff in FileMerge.app is easier to read
       if html != recode
         original = Tempfile.new('original')
         original.write(html)
