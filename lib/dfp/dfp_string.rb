@@ -4,7 +4,6 @@ class DFPString < String
 
   def decode
     gsub(/x[0-7][A-Fa-f0-9]/) do |c|
-      c[1..2].hex.chr
       CONVERTABLE_CHARS.include?(c[1..2].hex) ? c[1..2].hex.chr : c
     end
   end
