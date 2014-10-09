@@ -10,8 +10,7 @@ class DFPString < String
 
   def encode
     gsub(/./) do |c|
-      case c.ord
-      when 34, 38, 39, 60, 61, 62, 96
+      if CONVERTABLE_CHARS.include? c.ord
         'x'+c.ord.to_s(16)
       else
         c
