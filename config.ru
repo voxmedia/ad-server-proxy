@@ -13,8 +13,8 @@ rescue LoadError
   #no op
 end
 # Load the openx mock library
-require_relative 'lib/openx/mock_openx'
-require_relative 'lib/openx/mock_openx_js_tag'
+require_relative 'lib/openx/mock'
+require_relative 'lib/openx/mock_js_tag'
 
 # Load the fake redis library
 require_relative 'lib/fake_redis'

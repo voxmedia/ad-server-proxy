@@ -132,7 +132,7 @@ class MockOpenX
   end
 
   def insert_custom_ad_units
-    ad_template = Erubis::Eruby.new(IO.read(File.join(LIB_LOCATION, 'openx_ad_fragment.js.erb')))
+    ad_template = Erubis::Eruby.new(IO.read(File.join(LIB_LOCATION, 'ad_fragment.js.erb')))
 
     structured_content = JSON.parse(@content)
 
